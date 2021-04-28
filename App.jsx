@@ -39,8 +39,6 @@ export default class App extends Component {
 
     getImagenes = async() => {
 
-        console.log("Get imaegenes normallll")
-
         await fetch(this.state.url)
             .then(res => res.json())
             .then(res => {
@@ -80,13 +78,11 @@ export default class App extends Component {
     };
 
      handleLoadMore = () => {
-        console.log(this.state.i +" Antes de actualiza ")
         this.setState({
             i: this.state.i +1
 
             },
             this.getImagenes)
-         console.log(this.state.i + " Despues de actualizar")
 
       };
 
@@ -113,7 +109,6 @@ export default class App extends Component {
         return (
             <>
                 <View style={[styles.i]}>
-                    {/*<Button title={"Boton"} onPress={()=> {this.handleLoadMore()}}/>*/}
                     <View style={[styles.i]}>
                         <FlatList
                         data={this.state.imagenes}
